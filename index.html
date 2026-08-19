@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos</title>
+  
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a; /* Dark romantic background */
+      color: #f8fafc;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 35px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      color: #f43f5e; /* Rose pink color */
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.1rem;
+    }
+
+    /* Grid Layout for Photos & Videos */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Media Cards */
+    .card {
+      background: #1e293b;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #334155;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(244, 63, 94, 0.2);
+    }
+
+    /* Keeps image filled to cover card */
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover; 
+      display: block;
+    }
+
+    /* Set object-fit to contain so videos retain original ratio */
+    .card video {
+      width: 100%;
+      height: 300px;
+      object-fit: contain; 
+      background-color: #000000;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Videos</h1>
+  </header>
+
+  <main class="gallery">
+
+    <!-- ================= PHOTOS SECTION ================= -->
+    
+    <!-- Photo 1 -->
+    <div class="card">
+      <img src="media/pic1.jpg" alt="Memory 1" loading="lazy">
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="card">
+      <img src="media/pic2.jpg" alt="Memory 2" loading="lazy">
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="card">
+      <img src="media/pic3.jpg" alt="Memory 3" loading="lazy">
+    </div>
+
+
+    <!-- ================= VIDEOS SECTION ================= -->
+
+    <!-- Video 1 -->
+    <div class="card">
+      <video 
+        controls 
+        disablePictureInPicture 
+        controlsList="nodownload nopictureinpicture" 
+        oncontextmenu="return false;" 
+        preload="metadata">
+        <source src="media/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="card">
+      <video 
+        controls 
+        disablePictureInPicture 
+        controlsList="nodownload nopictureinpicture" 
+        oncontextmenu="return false;" 
+        preload="metadata">
+        <source src="media/video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </main>
+
+  <footer>
+    Made with ❤️ just for you
+  </footer>
+
+</body>
+</html>
