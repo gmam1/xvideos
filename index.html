@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Videos</title>
+  <title>Gallery & Videos</title>
   
   <style>
     /* Reset & Base Styles */
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a; /* Dark romantic background */
+      background-color: #0f172a; /* Dark background */
       color: #f8fafc;
       padding: 20px;
       min-height: 100vh;
@@ -56,6 +56,8 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -63,10 +65,18 @@
       box-shadow: 0 15px 25px rgba(244, 63, 94, 0.2);
     }
 
-    /* Keeps image filled to cover card */
+    /* Media Wrapper */
+    .media-container {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      background-color: #000000;
+    }
+
+    /* Keeps image filled to cover container */
     .card img {
       width: 100%;
-      height: 300px;
+      height: 100%;
       object-fit: cover; 
       display: block;
     }
@@ -74,10 +84,23 @@
     /* Set object-fit to contain so videos retain original ratio */
     .card video {
       width: 100%;
-      height: 300px;
+      height: 100%;
       object-fit: contain; 
-      background-color: #000000;
       display: block;
+    }
+
+    /* Title Overlay / Caption Styling */
+    .card-title {
+      padding: 12px 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      text-align: center;
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* Footer */
@@ -93,265 +116,306 @@
 <body>
 
   <header>
-    <h1>Videos</h1>
+    <h1>Gallery & Videos</h1>
   </header>
 
   <main class="gallery">
 
     <!-- ================= PHOTOS SECTION ================= -->
     
-    <!-- Photo 1 -->
     <div class="card">
-      <img src="media/pic1.jpg" alt="Memory 1" loading="lazy">
+      <div class="media-container">
+        <img src="media/pic1.jpg" alt="Memory 1" loading="lazy">
+      </div>
+      <div class="card-title">Memory 1</div>
     </div>
 
-    <!-- Photo 2 -->
     <div class="card">
-      <img src="media/pic2.jpg" alt="Memory 2" loading="lazy">
+      <div class="media-container">
+        <img src="media/pic2.jpg" alt="Memory 2" loading="lazy">
+      </div>
+      <div class="card-title">Memory 2</div>
     </div>
 
-    <!-- Photo 3 -->
     <div class="card">
-      <img src="media/pic3.jpg" alt="Memory 3" loading="lazy">
+      <div class="media-container">
+        <img src="media/pic3.jpg" alt="Memory 3" loading="lazy">
+      </div>
+      <div class="card-title">Memory 3</div>
     </div>
 
 
     <!-- ================= VIDEOS SECTION ================= -->
 
-    <!-- Video 1 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 1 Title</div>
     </div>
 
-    <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 2 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/3.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 3 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/4.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 4 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/5.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 5 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/6.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 6 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/7.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 7 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/8.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/8.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 8 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/9.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/9.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 9 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/10.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/10.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 10 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/11.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/11.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 11 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/12.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/12.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 12 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/13.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/13.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 13 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/14.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/14.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 14 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/15.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/15.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 15 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/16.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/16.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 16 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/17.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/17.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 17 Title</div>
     </div>
 
-        <!-- Video 2 -->
     <div class="card">
-      <video 
-        controls 
-        disablePictureInPicture 
-        controlsList="nodownload nopictureinpicture" 
-        oncontextmenu="return false;" 
-        preload="metadata">
-        <source src="media/18.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="media-container">
+        <video 
+          controls 
+          disablePictureInPicture 
+          controlsList="nodownload nopictureinpicture" 
+          oncontextmenu="return false;" 
+          preload="metadata">
+          <source src="media/18.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="card-title">Video 18 Title</div>
     </div>
-
 
   </main>
 
